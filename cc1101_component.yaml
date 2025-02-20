@@ -7,7 +7,7 @@ sensor:
     pin_SCK: GPI18
     pin_MISO: GPIO19
     pin_MOSI: GPIO23
-    pin_CSN: GPIO05
+    pin_CSN: GPIO5
     pin_GDO0: GPIO32
     bandwidth: 200
     frequency: 433.92
