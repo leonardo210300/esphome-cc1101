@@ -32,4 +32,3 @@ def to_code(config):
     yield cg.register_component(var, config)
     yield sensor.register_sensor(var, config)
 
-    yield sensor.register_sensor(var, config)
