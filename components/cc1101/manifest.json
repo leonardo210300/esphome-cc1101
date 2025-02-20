@@ -1,0 +1,7 @@
+{
+  "domain": "cc1101",
+  "name": "CC1101 Sensor",
+  "documentation": "https://github.com/leonardo210300/esphome-cc1101",
+  "requirements": [],
+  "codeowners": ["@leonardo210300"]
+}
