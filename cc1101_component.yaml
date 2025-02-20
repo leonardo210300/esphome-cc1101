@@ -1,0 +1,13 @@
+external_components:
+  - source: github://leonardo210300/esphome-cc1101
+
+sensor:
+  - platform: cc1101
+    name: "CC1101 RSSI"
+    pin_SCK: GPIO5
+    pin_MISO: GPIO19
+    pin_MOSI: GPIO23
+    pin_CSN: GPIO18
+    pin_GDO0: GPIO16
+    bandwidth: 200
+    frequency: 433.92
