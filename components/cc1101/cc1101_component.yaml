@@ -1,5 +1,6 @@
 external_components:
   - source: github://leonardo210300/esphome-cc1101
+    components: [cc1101]
 
 sensor:
   - platform: cc1101
