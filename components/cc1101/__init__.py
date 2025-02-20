@@ -9,7 +9,7 @@ CC1101 = cc1101_ns.class_('CC1101', cg.PollingComponent, sensor.Sensor)
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(CC1101),
-    cv.Required(CONF_NAME): cv.nameable(sensor.SENSOR_SCHEMA),
+    cv.Required(CONF_NAME): cv.string,
     cv.Required("pin_sck"): cv.int_,
     cv.Required("pin_miso"): cv.int_,
     cv.Required("pin_mosi"): cv.int_,
@@ -17,7 +17,7 @@ CONFIG_SCHEMA = cv.Schema({
     cv.Required("pin_gdo0"): cv.int_,
     cv.Required("bandwidth"): cv.float_,
     cv.Required("frequency"): cv.float_,
-})
+}).extend(sensor.SENSOR_SCHEMA)
 
 def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
@@ -30,4 +30,6 @@ def to_code(config):
     cg.add(var.set_bandwidth(config["bandwidth"]))
     cg.add(var.set_frequency(config["frequency"]))
     yield cg.register_component(var, config)
+    yield sensor.register_sensor(var, config)
+
     yield sensor.register_sensor(var, config)
