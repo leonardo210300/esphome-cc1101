@@ -2,18 +2,34 @@ esphome:
   name: cc1101
   platform: ESP32
   board: esp32dev
+  
+  includes:
+    - cc1101_component.h
+
+  libraries:
+    - SPI
+    - "SmartRC-CC1101-Driver-Lib"
 
 external_components:
-  - source: github://leonardo210300/esphome-cc1101
+  - source: github://leonardo210300/esphome-cc1101@main
     components: [cc1101]
 
 sensor:
   - platform: cc1101
     name: "CC1101 RSSI"
-    pin_SCK: GPIO18
-    pin_MISO: GPIO19
-    pin_MOSI: GPIO23
-    pin_CSN: GPIO5
-    pin_GDO0: GPIO32
+    pin_sck: GPIO18
+    pin_miso: GPIO19
+    pin_mosi: GPIO23
+    pin_csn: GPIO5
+    pin_gdo0: GPIO32
     bandwidth: 200
     frequency: 433.92
+    id: transciver
+    internal: true
+
+remote_transmitter:
+  - id: transmitter
+    pin:
+      number: 32
+      allow_other_uses: true
+    carrier_duty_percent: 100%
