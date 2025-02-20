@@ -4,10 +4,10 @@ external_components:
 sensor:
   - platform: cc1101
     name: "CC1101 RSSI"
-    pin_SCK: GPIO5
+    pin_SCK: GPI18
     pin_MISO: GPIO19
     pin_MOSI: GPIO23
-    pin_CSN: GPIO18
-    pin_GDO0: GPIO16
+    pin_CSN: GPIO05
+    pin_GDO0: GPIO32
     bandwidth: 200
     frequency: 433.92
