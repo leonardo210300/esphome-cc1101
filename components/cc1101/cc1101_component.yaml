@@ -1,3 +1,8 @@
+esphome:
+  name: cc1101
+  platform: ESP32
+  board: esp32dev
+
 external_components:
   - source: github://leonardo210300/esphome-cc1101
     components: [cc1101]
