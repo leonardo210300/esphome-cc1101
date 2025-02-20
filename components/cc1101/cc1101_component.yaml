@@ -5,7 +5,7 @@ external_components:
 sensor:
   - platform: cc1101
     name: "CC1101 RSSI"
-    pin_SCK: GPI18
+    pin_SCK: GPIO18
     pin_MISO: GPIO19
     pin_MOSI: GPIO23
     pin_CSN: GPIO5
